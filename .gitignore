@@ -1,0 +1,37 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.py[cod]
+*.sqlite3
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Django
+*.log
+*.pot
+*.py[cod]
+*.mo
+db.sqlite3
+/staticfiles/
+media/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Node modules (if you use frontend tools)
+node_modules/
+
+# PyCharm
+.idea/

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        #chart-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        canvas {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Expense by Category</h2>
+<div id="chart-container">
+    <canvas id="chart"></canvas>
+</div>
+
+<script>
+const labels = [{% for d in data %}'{{ d.category }}',{% endfor %}];
+const values = [{% for d in data %}{{ d.total }},{% endfor %}];
+
+new Chart(document.getElementById('chart'), {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Total Expense',
+            data: values,
+            backgroundColor: 'rgba(52, 152, 219, 0.6)',
+            borderColor: 'rgba(41, 128, 185, 1)',
+            borderWidth: 1,
+            borderRadius: 6
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top'
+            },
+            tooltip: {
+                mode: 'index',
+                intersect: false
+            },
+            title: {
+                display: true,
+                text: 'Expense Report by Category',
+                font: {
+                    size: 18
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Total Expense (₹)',
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    }
+                },
+                ticks: {
+                    stepSize: 1000
+                },
+                grid: {
+                    color: '#e0e0e0'
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 'Expense Categories',
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    }
+                },
+                grid: {
+                    display: false
+                }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
