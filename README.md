@@ -18,7 +18,11 @@ A simple Django web application demonstrating:
 4. Apply migrations
 5. Run server
 
+
+## Live Deployment
+[Demo Task App](https://demo-task-4v0z.onrender.com/)
+
 ## API Endpoints
-- Expenses CRUD: http://127.0.0.1:8000/api/expenses/
-- Weather API: http://127.0.0.1:8000/api/weather/Delhi/
-- Expense Report: http://127.0.0.1:8000/api/report/
+- Expenses CRUD: https://demo-task-4v0z.onrender.com/api/expenses/
+- Weather API: https://demo-task-4v0z.onrender.com/weather/Delhi/
+- Expense Report: https://demo-task-4v0z.onrender.com/api/report/

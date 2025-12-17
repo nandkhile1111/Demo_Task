@@ -83,13 +83,6 @@ WSGI_APPLICATION = 'demo_project.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'expense_db',
 #         'USER': 'postgres',
@@ -100,20 +93,10 @@ WSGI_APPLICATION = 'demo_project.wsgi.application'
 # }
 
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # default=os.environ.get("postgresql://expense_db_n6nq_user:SQVVqo958Fjj8yIlMc7FGrLEpvNd7kxy@dpg-d51f616mcj7s73c24p9g-a/expense_db_n6nq")
-#         default="postgres://expense_db_n6nq_user:SQVVqo958Fjj8yIlMc7FGrLEpvNd7kxy@dpg-d51f616mcj7s73c24p9g-a/expense_db_n6nq"
-
-#     )
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+    "default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
